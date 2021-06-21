@@ -1,4 +1,7 @@
 import './App.css';
+import Simpson from './components/simpson/Simpson';
+import Menu from './components/menu/Menu';
+import Simpsons from './components/simpsons/Simpsons';
 
 
 let simpsons = [
@@ -42,17 +45,9 @@ let simpsons = [
 function App() {
 	return (
 		<div>
-
-			{
-				simpsons.map(value =>
-					<div>
-						<h2>{value.name} {value.surname}, age - {value.age}</h2>
-						<img src={value.photo} alt=""/>
-						<div> {value.info}</div>
-					</div>
-				)
-
-			}
+			<Menu/>
+			<Simpsons items={simpsons}/>
+			<Menu/>
 
 
 		</div>
