@@ -1,8 +1,19 @@
 .wrap {
     margin: 0 auto;
-    width: 1080px;
+    width: 800px;
+    height: 100%;
     display: flex;
     flex-wrap:wrap;
-    justify-content: space-evenly;
+    justify-content: space-around;
 
+}
+.allPost {
+    display: flex;
+    flex-wrap: wrap;
+    width: 800px;
+    justify-content: space-around;
+}
+.userAndPost {
+    display: flex;
+    justify-content: space-between;
 }

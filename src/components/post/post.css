@@ -1,0 +1,9 @@
+.postCard {
+    display: block;
+    max-width: 300px;
+    background: antiquewhite;
+    border-radius: 20px;
+    padding: 1px 20px;
+    margin-bottom: 15px;
+
+}

@@ -17,7 +17,7 @@ export default function Users() {
 
 	return (
 		<div className='wrap'>
-			{usersList.map(value => <User key={value.id} item={value}/> )}
+			{usersList.map(value => <User key={value.id} item={value}/>)}
 		</div>
 	);
 }
