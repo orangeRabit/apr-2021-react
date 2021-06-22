@@ -1,21 +1,23 @@
 .userCard {
-    max-width: 300px;
+    max-width: 285px;
     height: 100%;
+    min-height: 330px;
     display: block;
     box-sizing: border-box;
     border-radius: 20px;
-    margin: 10px;
+    margin-bottom: 25px;
     padding-left: 15px;
     padding-top: 1px;
     padding-bottom: 1px;
     background: beige;
+    position: relative;
 }
 
 .info {
-    margin-bottom: 5px;
-    position: relative;
-    left: 20%;
-    top: 15px;
+
+    position: absolute;
+    left: 23%;
+    bottom: -15px;
     background: darkgoldenrod;
     border: none;
     padding: 8px;
