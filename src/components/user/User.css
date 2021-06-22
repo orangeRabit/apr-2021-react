@@ -1,0 +1,11 @@
+.userCard {
+    max-width: 300px;
+    display: block;
+    box-sizing: border-box;
+    border-radius: 20px;
+    margin: 10px;
+    padding-left: 15px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    background: beige;
+}

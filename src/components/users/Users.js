@@ -1,4 +1,5 @@
 import {useEffect, useState} from 'react';
+import User from "../user/User";
 
 export default function Users() {
 
@@ -15,13 +16,8 @@ export default function Users() {
 	}, []);
 
 	return (
-		<div>
-			{
-				usersList
-					.map(value => <div>{value.id} - {value.name}</div>)
-
-			}
-
+		<div className='wrap'>
+			{usersList.map(value => <User key={value.id} item={value}/> )}
 		</div>
 	);
 }
