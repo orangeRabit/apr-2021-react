@@ -1,13 +1,15 @@
 import './User.css'
-export default function User({item, selectUser}) {
+export default function User({item, userInfo}) {
 
     return (
         <div className='userCard'>
-            <div>
+            <h2>
                 {item.id} - {item.name}
-            </div>
+            </h2>
 
-            <button>Показати додаткову інформацію</button>
+            <button onClick={()=>{
+                userInfo(item.id)}
+            }>Показати додаткову інформацію</button>
 
         </div>
     );
