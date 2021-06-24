@@ -20,3 +20,9 @@ button {
     border-radius: 10px;
 
 }
+.btn {
+    width: 330px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
