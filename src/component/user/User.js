@@ -6,14 +6,14 @@ export default function User({item, userInfo, postCard}) {
             <h2>
                 {item.id} - {item.name}
             </h2>
-            <div className='btn'>
+
+
                 <button onClick={()=>{
+                    userInfo(item.id)
                     postCard(item.id)
-                }}>Показати пости</button>
-                <button onClick={()=>{
-                    userInfo(item.id)}
-                }>Показати додаткову інформацію</button>
-            </div>
+                }
+                }>Показати додаткову інформацію та пости</button>
+
 
 
         </div>
