@@ -1,10 +1,11 @@
 import './App.css'
 import {useEffect, useState} from 'react';
 import Users from './component/users/Users';
-import {getPost, getPosts, getUser, getUserPost, getUsers} from "./component/api/Api";
+import {getPost, getPostComment, getPosts, getUser, getUserPost, getUsers} from "./component/api/Api";
 import UserInfo from "./component/userInfo/UserInfo";
-import Posts from "./component/userPost/Posts";
+
 import UserPosts from "./component/userPost/UserPosts";
+import Comments from "./component/comments/Comments";
 
 
 export default function App() {
@@ -25,18 +26,17 @@ export default function App() {
 
 	}
 	function postCard(id) {
-		getUserPost(id).then(({data}) =>
+		getUserPost(id).then(({data}) => {setUserPosts(data)})}
 
-		{
-			console.log(data);
-			setUserPosts(data)})
-	}
+	let [posts, setPosts] = useState([]);
+	let [postComment, setPostComment] = useState(null)
 
-	// let [posts, setPosts] = useState([]);
-	//
-	// useEffect(()=> {
-	// 	getPosts().then(({data}) =>	{setPosts(data)})
-	// },[])
+	useEffect(()=> {
+		getPosts().then(({data}) =>	{setPosts(data)})
+	},[])
+
+	function postComments(postId) {
+		getPostComment(postId).then(({data}) =>{setPostComment(data)})}
 
 
 	return (
@@ -52,12 +52,12 @@ export default function App() {
 			</div>
 			<div className='cardPost'>
 					<p>ПОСТИ</p>
-				{userPosts &&<UserPosts item={userPosts}/>}
+				{userPosts &&<UserPosts item={userPosts} postComment={postComments}/>}
 			</div>
 
 			<div className='cardComment'>
 					<p>Коментарі</p>
-
+				{postComment && <Comments item={postComment}/> }
 			</div>
 		</div>
 	);

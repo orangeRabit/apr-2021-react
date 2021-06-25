@@ -14,5 +14,5 @@ let post = axios.create({
 })
 
 const  getPosts = () => post();
-const  getPost = (userID) => post('/' + userID)
-export {getPost, getPosts};
+const  getPostComment = (postID) => post('/' + postID + '/comments')
+export {getPostComment, getPosts};

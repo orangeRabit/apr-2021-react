@@ -1,4 +1,4 @@
-export default function Post({item}) {
+export default function Post({item, postComment}) {
     return (
         <div>
             <h3>
@@ -10,7 +10,10 @@ export default function Post({item}) {
             <p>
                 {item.body}
             </p>
-            <button>Пказати коментарі</button>
+            <button onClick={()=>{
+                console.log(item.title);
+                postComment(item.id)}
+            }>Пказати коментарі</button>
         </div>
     )
 };
