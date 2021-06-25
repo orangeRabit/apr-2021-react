@@ -30,9 +30,28 @@
     width: 1000px;
     height: 100%;
     min-height: 300px;
-    margin-top: 30px;
+    margin-top: 20px;
     border-radius: 30px;
     padding-left: 20px;
     box-sizing: border-box;
     background: aliceblue;
+}
+
+.postHeader {
+    width: 950px;
+    height: 40px;
+    margin-top: 10px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cardComment {
+    width: 600px;
+    height: 570px;
+    background: aliceblue;
+    margin-top: 20px;
+    border-radius: 30px;
+    padding-left: 20px;
+    box-sizing: border-box;
 }

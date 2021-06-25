@@ -6,7 +6,8 @@ let axiosInstance = axios.create({
 
 const getUsers = () => axiosInstance();
 const getUser = (id) => axiosInstance('/' + id);
-export {getUsers, getUser};
+const getUserPost = (id) => axiosInstance('/' + id + '/posts')
+export {getUsers, getUser, getUserPost};
 
 let post = axios.create({
     baseURL: 'https://jsonplaceholder.typicode.com/posts'
