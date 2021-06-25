@@ -13,23 +13,17 @@ export default function App() {
 
 	let [userInform, setUserInform] = useState(null);
 
+	let [userPosts, setUserPosts] = useState(null);
+
 	useEffect(()=> {
 		getUsers().then(response => {setUsers(response.data)})
 	}, [])
-
 	function userInfo(id) {
 		getUser(id).then(({data}) => {
 			console.log(data);
 			setUserInform(data)});
+
 	}
-
-	// let [posts, setPosts] = useState([]);
-	let [userPosts, setUserPosts] = useState(null);
-	//
-	// useEffect(()=> {
-	// 	getPosts().then(({data}) =>	{setPosts(data)})
-	// },[])
-
 	function postCard(id) {
 		getUserPost(id).then(({data}) =>
 
@@ -37,6 +31,12 @@ export default function App() {
 			console.log(data);
 			setUserPosts(data)})
 	}
+
+	// let [posts, setPosts] = useState([]);
+	//
+	// useEffect(()=> {
+	// 	getPosts().then(({data}) =>	{setPosts(data)})
+	// },[])
 
 
 	return (
@@ -51,19 +51,13 @@ export default function App() {
 				{userInform && <UserInfo item={userInform}/>}
 			</div>
 			<div className='cardPost'>
-				<div className='postHeader'>
 					<p>ПОСТИ</p>
-					<button>Пказати коментарі</button>
-				</div>
-
-				{/*<Posts items={posts}/>*/}
 				{userPosts &&<UserPosts item={userPosts}/>}
 			</div>
 
 			<div className='cardComment'>
-				<div className='commentHeader'>
 					<p>Коментарі</p>
-				</div>
+
 			</div>
 		</div>
 	);

@@ -10,7 +10,7 @@ export default function Post({item}) {
             <p>
                 {item.body}
             </p>
-
+            <button>Пказати коментарі</button>
         </div>
     )
-}
+};
