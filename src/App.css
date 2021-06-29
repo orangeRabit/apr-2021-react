@@ -1,0 +1,20 @@
+.wrapper {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    width: 80px;
+    background: darkcyan;
+    min-height: 100px;
+    height: 100%;
+    position: fixed;
+}
+
+.pages {
+    margin-left: 100px;
+}
+

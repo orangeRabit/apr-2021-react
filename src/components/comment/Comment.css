@@ -1,0 +1,9 @@
+.comment {
+    width: 800px;
+    height: 100%;
+    min-height: 150px;
+    background: burlywood;
+    padding: 20px;
+    border-radius: 20px;
+    margin-top: 10px;
+}
