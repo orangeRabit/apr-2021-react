@@ -1,5 +1,5 @@
 import './User.css'
-export default function User({item}) {
+export default function User({item, userPost}) {
 
     return (
         <div className='userCard'>
@@ -14,6 +14,7 @@ export default function User({item}) {
                 <p>{item.website}</p>
             </div>
             <hr/>
+            <button onClick={()=>{userPost(item.id)}}>Отримати пости</button>
 
 
         </div>

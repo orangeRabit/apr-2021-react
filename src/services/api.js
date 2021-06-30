@@ -11,5 +11,6 @@ let axiosInstanceUsers = axios.create({
 const getUsers = () => axiosInstanceUsers();
 const getPosts = () => axiosInstancePosts();
 const getComments = () => axiosInstanceComments();
+const getUserPost = (id) => axiosInstanceUsers('/' + id + '/posts')
 
-export {getUsers, getPosts, getComments};
+export {getUsers, getPosts, getComments, getUserPost};

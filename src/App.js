@@ -1,29 +1,38 @@
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
-import {getComments, getPosts, getUsers} from "./services/api";
+import {getComments, getUserPost, getUsers} from "./services/api";
 import './App.css'
 import {useEffect, useState} from "react";
 import Users from "./components/users/Users";
-import Posts from "./components/posts/Posts";
+
 import Comments from "./components/comments/Comments";
+import UserPosts from "./components/userPost/userPosts";
 
 
 export default function App() {
+
     let [users, setUsers] = useState([]);
-    useEffect(()=> {
-        getUsers().then(response => {setUsers(response.data)})
+    useEffect(() => {
+        getUsers().then(response => {
+            setUsers(response.data)
+        })
     }, [])
-    let [posts, setPosts] = useState([]);
-    useEffect(()=> {
-        getPosts().then(response => {
-            console.log(response);
-            setPosts(response.data)})
-    }, [])
+
     let [comments, setComments] = useState([]);
-    useEffect(()=> {
+    useEffect(() => {
         getComments().then(response => {
-            console.log(response);
-            setComments(response.data)})
+
+            setComments(response.data)
+        })
     }, [])
+
+    let [userPostss, setUserPosts] = useState(null);
+
+    function userPost(id) {
+        getUserPost(id).then(({data}) => {
+            setUserPosts(data)
+            console.log(data);
+        })
+    }
 
 
     return (
@@ -37,12 +46,22 @@ export default function App() {
                 </div>
 
                 <div className='pages'>
-                    <Route path={'/users'} render={()=>{return <div><Users items={users}/></div>}}/>
-                    <Route path={'/posts'} render={()=>{return <div><Posts item={posts}/> </div>}}/>
-                    <Route path={'/comments'} render={()=>{return <div><Comments item={comments}/> </div>}}/>
+                    <Route path={'/users'} render={() => {
+                        return <div><Users items={users} userPost={userPost}/></div>
+                    }}/>
+                    <Route path={'/posts'} render={() => {
+                        return <div>
+                            {!userPostss && <UserPosts item={userPostss}/>}
+
+                        </div>
+
+
+                    }}/>
+                    <Route path={'/comments'} render={() => {
+                        return <div><Comments item={comments}/></div>
+                    }}/>
                 </div>
             </div>
-
 
 
         </Router>
