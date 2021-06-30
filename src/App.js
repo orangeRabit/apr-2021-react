@@ -43,6 +43,7 @@ export default function App() {
                     <Link to="/posts">posts</Link>
                     <Link to="/comments">comments</Link>
 
+
                 </div>
 
                 <div className='pages'>
@@ -51,7 +52,7 @@ export default function App() {
                     }}/>
                     <Route path={'/posts'} render={() => {
                         return <div>
-                            {!userPostss && <UserPosts item={userPostss}/>}
+                            {userPostss && <UserPosts item={userPostss}/>}
 
                         </div>
 
