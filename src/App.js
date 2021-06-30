@@ -7,8 +7,11 @@ function reducer (state, action) {
 
 		case 'getUser':
 			let usersArr;
-			getUsers().then(response => {state(response.data)})
+			getUsers().then(response => {state.arr(response.data)})
+
 			return {...state}
+		default:
+			return {state};
 	}
 }
 
@@ -21,11 +24,11 @@ export default function App() {
 	// 	})
 	// }, [])
 
-	let [state, dispatch] = useReducer(reducer, [])
+	let [state, dispatch] = useReducer(reducer, {arr: []})
 	return (
 		<div>
 			<button onClick={()=>{dispatch({type: 'getUsers'})}}>show user</button>
-		{/*<Users items={state}/>*/}
+		{/*<Users items={state.arr}/>*/}
 
 		</div>
 	);
