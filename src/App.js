@@ -6,10 +6,9 @@ function reducer (state, action) {
 	switch (action.type) {
 
 		case 'getUser':
-			let usersArr;
-			getUsers().then(response => {state.arr(response.data)})
-
-			return {...state}
+			let usersArr = getUsers().then(response => {state.arr = response.data});
+			console.log(usersArr);
+			return (console.log(usersArr))
 		default:
 			return {state};
 	}
