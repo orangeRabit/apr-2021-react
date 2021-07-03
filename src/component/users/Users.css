@@ -1,0 +1,6 @@
+.usersHeder {
+    display: flex;
+    flex-direction: row;
+    width: 900px;
+    justify-content: space-around;
+}

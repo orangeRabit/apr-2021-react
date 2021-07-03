@@ -1,0 +1,22 @@
+.userCard {
+    display: flex;
+    flex-direction: row;
+    width: 1100px;
+    justify-content: space-between;
+    height: 60px;
+    background: aliceblue;
+    margin-top: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    align-items: center;
+
+}
+
+p, h3{
+    width: 230px;
+}
+
+img {
+    width: 40px;
+    height: 40px;
+}
