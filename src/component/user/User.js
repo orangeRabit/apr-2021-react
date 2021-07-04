@@ -1,13 +1,13 @@
 import './User.css'
-import {BrowserRouter as Router, Link, Route} from "react-router-dom";
-import userPost from "../userPost/UserPosts";
+import {Link} from "react-router-dom";
+
 
 
 
 export default function User({item:{id, name, username, email, address, phone, website, company}}) {
     return (
         <div className='userCard'>
-
+            <img src='/public/userLogo.png' alt="userLogo"/>
             <h3>
                 {name}
             </h3>

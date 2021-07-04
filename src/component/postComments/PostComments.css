@@ -1,0 +1,11 @@
+.commentCard {
+    width: 800px;
+    margin: 0 auto;
+    margin-top: 5px;
+    background: aliceblue;
+    padding: 10px;
+}
+
+.commentHeader, .commentName, .commentBody {
+    width: 800px;
+}

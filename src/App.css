@@ -1,0 +1,17 @@
+.menu {
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+.userLink, .homeLink  {
+    display: block;
+    background: aqua;
+    padding: 5px;
+    width: 250px;
+    text-align: center;
+    margin: 20px;
+    border-radius: 15px;
+
+}
